@@ -1,0 +1,17 @@
+{% macro table(tableHeaders, rowFields, data) %}
+  <div class="table">
+    <div class="table__row">
+      {% for header in tableHeaders %}   
+          <span class="table__cell table__cell_header">{{ header }}</span>
+      {% endfor %}
+    </div>
+
+    {% for rowData in data %}
+      <div class="table__row">
+        {% for field in rowFields %}
+          <span class="table__cell">{{ rowData[field] }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
