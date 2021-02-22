@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
+const bodyParser = require('body-parser')
 
 const configureTemplateEngine = require('./utils/configureTemplateEngine')
 const apiRouter = require('./routes/apiRouter')
@@ -16,11 +17,13 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 
-app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
 app.use(express.static(path.join(__dirname, FOLDER_WITH_STATIC)))
 app.use('/api', apiRouter)
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   res.redirect('/api/books')
 })
 
