@@ -1,9 +1,0 @@
-{% from "table.njk" import table %}
-{% set pageTitle = "books" %}
-{% extends "base.njk" %}
-
-{% block mainContent %}
-  
-  {{ table(["name", "date", "authors"], ["name", "date"], data) }}
-{% endblock %}
-
