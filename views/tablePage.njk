@@ -1,0 +1,24 @@
+{# VARIABLES #}
+{# pageTitle: page title #}
+{# cols: column names for table #}
+{# fields: field names for each table column #}
+{# data: data for table #}
+
+{# tableSchema: #}
+
+{% from "macros/table.njk" import table %}
+{% extends "base.njk" %}
+
+{% block mainContent %}
+  <div class="centered-block">
+    {# {{ table(cols, fields, data) }} #}
+      {{table(tableSchema, data)}}
+      <div class="edit-panel">
+        <button class="edit-panel__button" id="button-add" type="button">Add new item</button>
+        <button class="edit-panel__button" id="button-delete" type="button">Delete item</button>
+        <button class="edit-panel__button" id="button-change" type="button">Change item</button>
+      </div>
+    <script async src="/scripts/tablePage.js"></script>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,7 @@
+.edit-panel {
+  margin-top: 1rem;
+
+  &__button {
+    @include interface-button-mixin();
+  }
+}

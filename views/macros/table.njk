@@ -1,0 +1,17 @@
+{% macro table(tableSchema, data) %}
+  <div class="table">
+    <div class="table__row">
+      {% for col in tableSchema %}   
+          <span class="table__cell table__cell_header">{{ col.title | capitalize}}</span>
+      {% endfor %}
+    </div>
+
+    {% for rowData in data %}
+      <div class="table__row" id="{{rowData['_id']}}">
+        {% for col in tableSchema %}
+          <span class="table__cell">{{ rowData[col.field] }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}

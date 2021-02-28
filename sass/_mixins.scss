@@ -1,0 +1,21 @@
+@mixin content-block-mixin($bg-color: $beige, $padding: 1.5rem) {
+  border-radius: 5px;
+  background-color: $bg-color;
+  padding: $padding;
+}
+
+@mixin interface-button-mixin($bg-color: $quick-silver, $f-color: $beige) {
+  border: none;
+  font-size: inherit;
+  background-color: $bg-color;
+  color: $f-color;
+  padding: 0.5rem 0.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: invert($bg-color);
+  }
+}
