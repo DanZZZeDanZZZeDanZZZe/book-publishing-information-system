@@ -1,4 +1,23 @@
 .main {
+  display: grid;
+  grid-template-columns: minmax(max-content, 10rem) 1fr;
   background-color: $silver;
   color: $onyx;
+  align-items: start;
+
+  &__nav {
+    background-color: $quick-silver;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  &__link {
+    align-self: center;
+    padding-top: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: $beige;
+  }
 }

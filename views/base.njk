@@ -9,6 +9,10 @@
   <body>
     {%- include './includes/header.njk' -%}
     <main class="main">
+      <nav class="main__nav">
+        <a class="main__link" href="/api/books/">Books</a>
+        <a class="main__link" href="/api/authors/">Authors</a>
+      </nav>
       {%- block mainContent -%}
         No content
       {%- endblock mainContent -%}
